@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>익명이 캐릭터 공식쇼핑몰 익명상점
+    </title>
     <link rel="stylesheet" href="css/goods.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/reset.css">
@@ -72,10 +73,10 @@
                     </div>
                     <div class="item_photo_info_sec">
                         <div class="item_photo_view">
-                            <img src="" alt="">
+                            <img src="img/cup.jpg" alt="">
                             <!-- 제품 사진 -->
                             <div class="slick-list.draggable">
-                                <img src="img/cup.jpg" alt="cup">
+                                <img src="" alt="cup">
                                 <!-- 제품 사진 -->
                             </div>
                         </div>
@@ -97,6 +98,7 @@
                                 <dl class="item_discount_mileage">
                                     <dt>구매혜택</dt>
                                     <dd>
+                                        <span class="item_discount_dn"></span>
                                         <span>적립 마일리지:</span>
                                         <strong>+100원</strong>
                                         <strong class="benefit_mileage">(상품 : 100원)</strong>
@@ -104,10 +106,38 @@
                                 </dl>
                                 <dl class="item_delivery">
                                     <dt>배송비</dt>
-                                    <dd>
-                                        <strong>2,500원 / 주문시결제(선결제)</strong>
-                                        
-                                    </dd>
+                                    <dd class="dd1">2,500원 / 주문시결제(선결제)</dd>
+                                        <span class="btn_gray_list">
+                                            <a href="#lyDelivery" class="btn_gray_small">
+                                                <em>조건별배송</em>
+                                            </a>
+                                        </span>
+                                        <div id="lyDelivery" class="layer_area">
+                                            <div class="ly_wrap_delivery_layer">
+                                                <div class="ly_tit">금액별배송비</div>
+                                                <div class="ly_cont">
+                                                    <div class="delivery_list">
+                                                        <ul>
+                                                            <li>
+                                                                0원 이상 ~ 50,000원 미만
+                                                                <span>2500원</span>
+                                                            </li>
+                                                            <li>
+                                                                50,000원 이상
+                                                                <span>0원</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="chk_none">
+                                                        배송비 계산 기준 : 판매가 + 옵션가 + 추가상품가 +
+                                                        텍스트옵션가 - 상품할인가 - 상품쿠폰할인가
+                                                    </p>
+                                                </div>
+                                                <a href="#lyDelivery" class="ly_close">
+                                                    <img src="img/close.png" alt="닫기">
+                                                </a>
+                                            </div>
+                                        </div>
                                 </dl>
                                 <dl>
                                     <dt>상품코드</dt>

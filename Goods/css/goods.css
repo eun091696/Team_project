@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 .goods_view_top {
     display: flex;
     justify-content: center;
@@ -67,6 +70,13 @@ dt {
     height: 18px;
 }
 
+.item_discount_dn {
+    padding: 1px 0 2px 20px;
+    background-image: url("/img/Mbutton.png");
+    background-repeat: no-repeat;
+
+}
+
 .item_add_option_box {
     padding: 10px 0px 9px;
     border-top: 1px solid #dbdbdb;
@@ -76,6 +86,7 @@ dt {
     display: flex;
     justify-content: space-around;
     padding: 20px 0px 0px;
+    border-top: 1px solid black;
 }
 
 .btn_choice_box button {
@@ -91,4 +102,75 @@ dt {
 .benefit_mileage {
     color: #999999;
     font-size: 11px;
+}
+
+.dd1 {
+    padding: 0px 5px 5px 0px;
+}
+
+.btn_gray_small {
+    display: flex;
+    align-items: center;
+    width: 88px;
+    height: 24px;
+    border: 1px solid gray;
+    padding: 0px 0px 0px 11px;
+    background-color: white;
+}
+
+.btn_gray_small:hover {
+    background-color: #f8f8f8;
+}
+
+.btn_gray_small em {
+    padding: 0px 20px 0px 0px;
+    font-size: 11px;
+}
+
+#lyDelivery {
+    /* display: none; */
+    position: relative;
+    top: 11px;
+    right: 307px;
+    z-index: 150;
+}
+
+.ly_wrap_delivery_layer {
+    position: absolute;
+    min-width: 250px;
+    text-align: left;
+    border: 1px solid #999999;
+    background-color: #ffffff;
+}
+
+.ly_tit {
+    padding: 13px 35px 11px 15px;
+    font-size: 12px;
+    background-color: #f4f4f4;
+    height: 42px;
+}
+
+.ly_cont {
+    padding: 0px 15px 15px;
+    width: 305px;
+    height: 167px;
+}
+
+.delivery_list li {
+    padding: 10px 5px;
+    border-bottom: 1px solid #f4f4f4;
+    font-weight: bold;
+}
+
+.chk_none {
+    margin: 10px 0px 0px;
+    padding: 5px 0px 0px 19px;
+    font-size: 12px;
+}
+
+.ly_close {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
