@@ -236,20 +236,20 @@ dt {
     border-collapse: collapse;
 }
 
-th, td {
+.left_table_type th, .left_table_type td {
     height: 52px;
 
     border: 1px solid #c7c7c7;
 }
 
-th {
+.left_table_type th {
     padding: 10px 10px 10px 14px;
     text-align: left;
 
     background-color: #f9f9f9;
 }
 
-td {
+.left_table_type td {
     padding: 10px 10px 10px 18px;
     color: #777777;
 }
@@ -258,10 +258,136 @@ td {
     margin-bottom: 3px;
 }
 
+/* 교환 CSS */
+
 .exhange_cont p {
     margin-bottom: 3px;
 }
 
 .admin_msg {
     height: 100px;
+}
+
+/* 상품후기 CSS */
+
+.review_cont {
+    position: relative;
+    padding-top: 20px;
+}
+
+.review_table {
+    width: 100%;
+}
+
+.review_cont h3 {
+    border-bottom: 1px solid black;
+}
+
+.reviews_table_type {
+    width: 100%;
+}
+
+.review_table td {
+    padding: 13px 10px 15px 18px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.reviews_table_type {
+    border-collapse: collapse;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination ul {
+    padding-top: 20px;
+}
+
+.pagination span {
+    padding: 4px 5px 1px 5px;
+    font-weight: bold;
+    border: 1px solid #777777;
+}
+
+.btn_reviews_box {
+    position: absolute;
+    top: 32px;
+    right: 0px;
+}
+
+.btn_reviews_more {
+    display: inline-block;
+    min-width: 140px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #404040;
+}
+
+.btn_reviews_write {
+    display: inline-block;
+    min-width: 140px;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #404040;
+    background-color: #404040;
+}
+
+/* 상품 Q&A CSS */
+.qna_cont {
+    position: relative;
+    padding-top: 20px;
+}
+
+.qna_cont h3 {
+    border-bottom: 1px solid black;
+}
+
+.qna_table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.qna_table td {
+    width: 1200px;
+    height: 80px;
+    padding: 13px 10px 15px 18px;
+    border-bottom: 1px solid #dbdbdb;
+    text-align: center;
+}
+
+.btn_qna_box {
+    position: absolute;
+    top: 32px;
+    right: 0px;
+}
+
+.btn_qna_more {
+    display: inline-block;
+    min-width: 140px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #404040;
+}
+
+.btn_qna_write {
+    display: inline-block;
+    min-width: 140px;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #404040;
+    background-color: #404040;
+}
+
+.on {
+    border-bottom: 3px solid black;
 }
