@@ -138,7 +138,7 @@ dt {
 .layer_area {
     display: none;
     position: relative;
-    position: absolute;
+    /* position: absolute; */
     width: 305px;
     text-align: left;
     border: 1px solid #999999;
@@ -165,11 +165,24 @@ dt {
     right: 10px;
 }
 
-
 .delivery_list li {
     padding: 10px 5px;
     border-bottom: 1px solid #f4f4f4;
     font-weight: bold;
+}
+
+.delivery_list span {
+    float: right;
+    font-weight: normal;
+}
+
+.chk_none {
+    margin: 10px 0px 0px;
+    padding: 5px 0px 5px 19px;
+}
+
+#lyDeliveryZone .ly_cont {
+    height: 132px;
 }
 
 .btn_gray_small {
