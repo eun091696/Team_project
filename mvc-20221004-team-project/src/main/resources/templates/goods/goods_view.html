@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>익명이 캐릭터 공식쇼핑몰 익명상점
     </title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="/static/css/goods/goods_view.css">
     <link rel="stylesheet" href="/static/css/header.css">
     <link rel="stylesheet" href="/static/css/reset.css">
@@ -104,7 +105,8 @@
                                 <dl class="item_discount_mileage">
                                     <dt>구매혜택</dt>
                                     <dd>
-                                        <span class="item_discount_dn"></span>
+                                        <span class="item_discount_dn">
+                                        </span>
                                         <span>적립 마일리지:</span>
                                         <strong>+100원</strong>
                                         <strong class="benefit_mileage">(상품 : 100원)</strong>
@@ -116,11 +118,11 @@
                                         2,500원 / 주문시결제(선결제)
                                         <span class="btn_layer">
                                             <span class="btn_gray_list">
-                                                <a href="javascript:doDisplay();" class="btn_gray_small">
+                                                <a href="javascript:void(0)" class="btn_gray_small">
                                                     <em>조건별배송</em>
                                                 </a>
                                             </span>
-                                            <div id="lyDelivery" class="layer_area">
+                                            <div id="lyDelivery" class="layer_area layer_area_invisible">
                                                 <div class="ly_wrap_delivery_layer">
                                                     <div class="ly_tit">금액별배송비</div>
                                                     <div class="ly_cont">
@@ -149,11 +151,11 @@
                                         </span>
                                         <span class="btn_layer">
                                             <span class="btn_gray_list">
-                                                <a href="#lyDeliveryZone" class="btn_gray_small">
+                                                <a href="javascript:void(0)" class="btn_gray_small">
                                                     <em>지역별추가배송지</em>
                                                 </a>
                                             </span>
-                                            <div id="lyDeliveryZone" class="layer_area">
+                                            <div id="lyDeliveryZone" class="layer_area layer_area_invisible">
                                                 <div class="ly_wrap_delivery_zone_layer">
                                                     <div class="ly_tit">
                                                         <strong>지역별배송비</strong>
@@ -481,7 +483,7 @@
             </div>
         </div>
     </div>
-    <script src="/static/js/btn_gray_list.js"></script>
+    <script src="/static/js/goods/goods_view/btn_gray_list.js"></script>
 </body>
 
 </html>

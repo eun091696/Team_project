@@ -88,7 +88,7 @@ dt {
 
 .item_discount_dn {
     padding: 1px 0 2px 20px;
-    background-image: url("/img/Mbutton.png");
+    background-image: url("/static/img/goods/goods_view/Mbutton.png");
     background-repeat: no-repeat;
 
 }
@@ -125,9 +125,7 @@ dt {
     margin: 0px 24.6px 0px 0px;
 }
 
-/* .baesong {
-    vertical-align: top;
-} */
+
 
 .dd1 {
     padding: 0px 5px 5px 0px;
@@ -135,14 +133,31 @@ dt {
     height: 78px;
 }
 
-.layer_area {
+.layer_area_invisible{
     display: none;
+}
+
+.layer_area {
+    /* display: none; */
     position: relative;
-    /* position: absolute; */
     width: 305px;
     text-align: left;
     border: 1px solid #999999;
     background-color: #ffffff;
+}
+
+.dd1 {
+    position: relative;
+}
+
+#lyDelivery {
+    position: absolute;
+    right: 28%;
+}
+
+#lyDeliveryZone {
+    position: absolute;
+    left: -30%;
 }
 
 .ly_tit {
@@ -404,3 +419,4 @@ dt {
 .on {
     border-bottom: 3px solid black;
 }
+
