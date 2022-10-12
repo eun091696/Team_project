@@ -1,19 +1,19 @@
 const loginButton = document.querySelector(".login-button");
 
 loginButton.onclick = () => {
-    const logId = document.querySelector(".loginId");
-    const logPwd = document.querySelector(".loginPwd");
+    const accountInputs = document.querySelectorAll(".account_input");
 
     let user = {
-        userName: logId.value,
-        password: logPwd.value 
+        userName: accountInputs[0].value,
+        password: accountInputs[1].value
     }
 
     let ajaxOption = {
-        async: false, //동기, 비동기 처리
+        async: false,
         type: "post",
         url: "/api/account/login",
-        data: user,
+        contentType: "application/json",
+        data: JSON.stringify(user),
         dataType: "json",
         success: (response) => {
             alert("로그인 요청 성공");
@@ -25,3 +25,4 @@ loginButton.onclick = () => {
 
     $.ajax(ajaxOption);
 }
+
