@@ -17,9 +17,11 @@ loginButton.onclick = () => {
         dataType: "json",
         success: (response) => {
             alert("로그인 요청 성공");
+            console.log(response);
         },
         error: (error) => {
             alert("로그인 요청 실패");
+            console.log(error.responseJSON.userName);
         }
     }
 
