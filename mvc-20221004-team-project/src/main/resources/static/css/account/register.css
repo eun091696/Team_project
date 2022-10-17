@@ -217,3 +217,8 @@ input[type="text"], input[type="password"] {
     cursor: pointer;
     font-weight: bold;
 }
+
+.error-msgs li {
+    text-align: center;
+    color: #ab3e55;
+}

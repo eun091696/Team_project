@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<!--    <script src="https://code.jquery.com/jquery-latest.min.js"></script>-->
     <link rel="stylesheet" href="/static/css/account/reset.css">
     <link rel="stylesheet" href="/static/css/account/login.css">
 </head>
@@ -57,15 +57,15 @@
                             <h2>로그인</h2>
                         </div>
                         <div class="member_cont">
-                            <form id="formLogin" method="post">
+                            <form action="/account/login" id="formLogin" method="post">
                                 <div class="member_login_box">
                                     <h3>회원 로그인</h3>
                                     <div class="login_input_sec">
                                         <div>
-                                            <input class="account_input" type="text" id="loginId" name="loginId" placeholder="아이디" required="true" aria-required="true">
+                                            <input class="account_input" type="text" id="username" name="username" placeholder="아이디" required="true" aria-required="true">
                                             <input class="account_input" type="password" id="loginPwd" name="loginPwd" placeholder="비밀번호" required="true" aria-required="true">
                                         </div>
-                                        <button type="button" class="login-button">로그인</button>
+                                        <button type="submit" class="login-button">로그인</button>
                                     </div>
                                     <div class="id_chk">
                                         <span class="form_element">

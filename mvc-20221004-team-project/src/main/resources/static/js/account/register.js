@@ -11,7 +11,7 @@ btnComfirm.onclick = () => {
         email: accountInpus[4].value
     }
 
-    let ajaxOption = {
+    $.ajax({
         async: false,
         type: "post",
         url: "/api/account/register",
@@ -24,9 +24,25 @@ btnComfirm.onclick = () => {
         },
         error: (error) => {
             alert("회원가입 요청 실패");
-            console.log(error.responseJSON);
+            console.log(error.responseJSON.data);
+            loadErrorMassage(error.responseJSON.data);
         }
-    }
+    });
+}
 
-    $.ajax(ajaxOption);
+function loadErrorMassage(errors) {
+    const errorList = document.querySelector(".errors")
+    const errorMags = document.querySelector(".error-msgs");
+    const errorArray = Object.values(errors)
+    
+    errorMags.innerHTML = "";
+
+    errorArray.forEach(error => {
+        errorMags.innerHTML += `
+        <li>${error}</li>
+        `;
+    });
+
+    errorList.classList.remove("errors-invisible");
+
 }
