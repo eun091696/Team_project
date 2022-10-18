@@ -1,224 +1,168 @@
-#wrap{
-    width: 100%;
-}
-#header{
-    display: flex;
-    justify-content: center;
-}
-#top{
+#container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-}
-#header .sns{
-    width: 1200px;
-    height: 40px;
-}
-#header .logo{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 1200px;
-    height: 174px;
-}
-#top .sns{
-    display: flex;
-    justify-content: space-between;
-}
-#top .sns ul{
-    display: flex;
-    height: 40px;
-    align-items: center;
-}
-#top .sns li{
-    margin-right: 10px;
-    color: #888888;
-}
-#header .nav{
-    display: flex;
-    justify-content: center;
-    width: 1920px;
-    height: 50px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-}
-#header .nav ul{
-    display: flex;
-    font-size: 15px;
-    height: 50px;
-    width: 1000px;
-    align-items: center;
-    justify-content:space-around;
-}
-#header .nav1{
-    font-weight: 700;
-}
 
-#account{
-    width: 100%;
-    height: 940px;
-}
-
-.location_cont{
+    width: 1200px;
     margin: 0 auto;
-    width: 950px;
-    height: 38.5px;
+    border-top: none;
 }
 
-.location_cont em{
-    display: block;
-    padding: 12px 0px 10px 0px;
-    width: 81px;
-    height: 16.5px;
-    color: rgb(119, 119, 119);
+#contents {
+    min-height: auto;
+    padding-bottom: 58px;
+}
+
+.location_wrap {
+    text-align: left;
+    width: 1200px;
+}
+
+
+.location_cont {
+    width: 100%;
+    height: 38.5px;
+    margin: 0 auto;
+}
+
+.location_cont em {
+    padding: 12px 0 10px 0;
+    float: left;
+    
     font-size: 11px;
     font-style: normal;
-    font-weight: 400;
+    color: #777777;
+}
+
+#contents em a:hover{
+    text-decoration: underline;
+}
+
+.sub_content {
+    padding-top: 10px;
+    width: 100%;
+    height: 530.5px;
 }
 
 .content_box {
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    height: 500.5px;
 }
 
-.join_base_wrap {
-    width: 950px;
+.member_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 20px auto 40px;
+    width: 593px;
+    height: 100%;
 }
+
+.location_cont {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 
 .member_tit {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #dbdbdb;
-}
-
-.member_tit h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.member_tit ol li {
-    font-size: 14px;
-    float: left;
-}
-
-.member_tit li span {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.member_tit li span > img {
-    padding: 0px 14px;
+    display: none;
 }
 
 .member_cont {
+    border: 1px solid #dbdbdb;
+    width: 100%;
+    height: 444.5px;
+    
     padding: 70px 60px;
 }
 
-.base_info_box {
-    width: 743px;
+.member_login_box {
+    height: 302.5px;
 }
 
-.base_info_box .test {
-    display: flex;
-    justify-content: space-between;
-}
-
-.base_info_box h3 {
-    padding-bottom: 17px;
-    font-size: 18px;
-    font-weight: normal;
-}
-
-.base_info_box .important {
-    background: url(/static/img/account/register/icon_dot_03.png) no-repeat 0 center;
-}
-
-.base_info_box .test span {
-    float: right;
-    padding-left: 10px;
-    line-height: 40px;
-    color: #ab3e55;
-}
-
-.base_info_sec {
+.member_login_shop {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
     width: 100%;
-    border-collapse: collapse;
-    border-top: 1px solid black;
+    height: 85.5px;
+
 }
 
-.base_info_sec th {
-    width: 186px;
-    text-align: left;
-    padding: 10px 25px;
-    border-bottom: 1px solid #dcdcdc;
-    background-color: #fbfbfb;
-}
-
-.base_info_sec td {
-    padding: 15px 0px 15px 15px;
-    border-bottom: 1px solid #dcdcdc;
-}
-
-.base_info_sec span {
-    padding-left: 10px;
-    margin-left: -10px;
-}
-
-.base_info_sec table input[type="text"] {
-    width: 380px;
-    height: 31px;
-}
-
-input[type="text"], input[type="password"] {
-    padding: 0px 10px;
-    outline: none;
-    font-size: 12px;
-}
-
-.base_info_sec table input[type="password"] {
-    width: 162px;
-    height: 31px;
-}
-
-
-.base_info_sec table input[type="email"] {
-    width: 251px;
-    height: 31px;
-}
-
-.btn_center_box {
-    display: flex;
-    justify-content: center;
-    width: 743px;
-    height: 45px;
-    margin-top: 35px;
-}
-
-.btnCancel {
-    width: 150px;
-    height: 45px;
-    color: #3e3d3c;
-    font-size: 13px;
-    border: 1px solid#cccccc;
-    background: #fbfbfb;
-    cursor: pointer;
-}
-
-.btn_comfirm {
-    width: 150px;
-    height: 45px;
-    margin-left: 6px;
-    color: #ffffff;
-    font-size: 14px;
-    border: 1px solid #ab3e55;
-    background: #ab3e55;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.error-msgs li {
+.shop_mall_join {
+    display: block;
+    padding: 20px 0px 20px 0px;
+    border: 1px solid #cccccc;
+    width: 471px;
+    height: 64.5px;
+    
+    font-size: 15px;
     text-align: center;
-    color: #ab3e55;
+    background-color: #ffffff;
 }
+
+.shop_mall_join:hover {
+    cursor: pointer;
+}
+
+.member_sns_login {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_sns_login {
+    width: 471px;
+    height: 141px;
+}
+
+.btn_facebook_login {
+    margin-top: 12px;
+    padding: 20px 0px;
+    border: 1px solid #c4c4c4;
+    width: 100%;
+    height: 64.5px;
+    
+    font-size: 15px;
+    text-align: center;
+    background-color: #fafafa;
+
+    cursor: pointer;
+}
+
+.btn_naver_login {
+    margin-top: 12px;
+    padding: 20px 0px;
+    border: 1px solid #c4c4c4;
+    width: 100%;
+    height: 64.5px;
+    
+    font-size: 15px;
+    text-align: center;
+    background-color: #fafafa;
+
+    cursor: pointer;
+}
+
+.chk_none {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 0px 5px 19px;
+
+    color: #404040;
+    font-weight: 400;
+}
+
+.warning {
+    height: 12px;
+}
+
+.member_guide_txt {
+    padding: 18px 0px 20px 0px;
+}
+
+.member_guide_txt a:hover{
+    text-decoration: underline;
+}
+

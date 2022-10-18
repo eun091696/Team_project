@@ -16,4 +16,9 @@ public class AccountController {
     public String register() {
         return ("account/register");
     }
+
+    @GetMapping("/account/join")
+  public String join() {
+        return ("account/join");
+  }
 }

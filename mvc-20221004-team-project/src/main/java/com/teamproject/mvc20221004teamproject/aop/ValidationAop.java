@@ -17,7 +17,7 @@ import java.util.Map;
 @Component
 public class ValidationAop {
 
-    @Pointcut("execution(* com.teamproject.mvc20221004teamproject..*Api.*(..)")
+    @Pointcut("execution(* com.teamproject.mvc20221004teamproject..*Api.*(..))")
     private void executionPointCut(){}
 
     @Around("executionPointCut()")

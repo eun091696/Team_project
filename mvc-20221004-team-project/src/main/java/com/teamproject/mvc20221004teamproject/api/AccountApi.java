@@ -2,11 +2,8 @@ package com.teamproject.mvc20221004teamproject.api;
 
 import com.teamproject.mvc20221004teamproject.dto.CMRespDto;
 import com.teamproject.mvc20221004teamproject.dto.LoginReqDto;
-import com.teamproject.mvc20221004teamproject.dto.RegisterDto;
+import com.teamproject.mvc20221004teamproject.dto.JoinDto;
 import com.teamproject.mvc20221004teamproject.dto.validation.ValidationSequence;
-import com.teamproject.mvc20221004teamproject.exception.CustomValidationException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -17,6 +14,7 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 @RequestMapping("/api/account")
 @RestController
@@ -40,10 +38,9 @@ public class AccountApi {
         return ResponseEntity.ok().body(null);
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@Validated(ValidationSequence.class) @RequestBody RegisterDto registerDto, BindingResult bindingResult) {
-        return ResponseEntity.created(null).body(new CMRespDto<>("회원가입 성공", registerDto));
+    @PostMapping("/join")
+    public ResponseEntity<?>join(@Validated(ValidationSequence.class) @RequestBody JoinDto joinDto, BindingResult bindingResult) {
+        return ResponseEntity.badRequest().body(new CMRespDto<>("회원가입 성공", joinDto));
     }
-
 
 }
