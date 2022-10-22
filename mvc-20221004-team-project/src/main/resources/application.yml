@@ -9,3 +9,13 @@ spring:
     user:
       name: test
       password: 1q2w3e4r!
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://database-1.ca8wv62m8kjt.ap-northeast-2.rds.amazonaws.com:3306/teamdb
+    username: eun
+    password: 1q2w3e4r
+
+mybatis:
+  mapper-locations:
+    - /mappers/*.xml

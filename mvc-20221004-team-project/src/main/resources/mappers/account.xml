@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.teamproject.mvc20221004teamproject.repository.AccountRepository">
+    <resultMap id="role" type="com.teamproject.mvc20221004teamproject.domain.Role">
+        <result property="id" column="id"/>
+        <result property="name" column="role_id"/>
+        <result property="create_date" column="create_date"/>
+        <result property="update_date" column="update_date"/>
+    </resultMap>
+    <resultMap id="user" type="com.teamproject.mvc20221004teamproject.domain.User">
+        <result property="id" column="id"/>
+        <result property="username" column="role_id"/>
+        <result property="password" column="password"/>
+        <result property="passwordchk" column="passwordchk"/>
+        <result property="name" column="name"/>
+        <result property="email" column="email"/>
+        <result property="phonenum" column="phonenum"/>
+        <result property="number" column="number"/>
+        <result property="address" column="address"/>
+        <result property="provider" column="provider"/>
+        <result property="role_id" column="role_id"/>
+        <result property="create_date" column="create_date"/>
+        <result property="update_date" column="update_date"/>
+        <collection property="role" resultMap="role"/>
+    </resultMap>
+
+    <!--  parameterType은 repository의 findUserByEmail의 파라메터 타입을 가져오며, resultType는 리턴값을 가져오지만 resultMap을 이용해 위 id를 가져온다. -->
+    <select id="findUserByEmail" parameterType="String" resultMap="user">
+        select
+            um.id,
+            um.username,
+            um.password,
+            um.passwordchk,
+            um.name,
+            um.email,
+            um.phonenum,
+            um.number,
+            um.address,
+            um.provider,
+            um.role_id,
+            rm.name,
+            um.create_date,
+            um.update_date
+        from
+            user_mst um
+            left outer join role on(rm.id = um.role_id)
+        where
+            um.email = #{email}
+    </select>
+</mapper>

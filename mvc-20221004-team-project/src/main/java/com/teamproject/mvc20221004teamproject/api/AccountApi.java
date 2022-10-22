@@ -1,9 +1,12 @@
 package com.teamproject.mvc20221004teamproject.api;
 
+import com.teamproject.mvc20221004teamproject.aop.annotation.LogAspect;
 import com.teamproject.mvc20221004teamproject.dto.CMRespDto;
 import com.teamproject.mvc20221004teamproject.dto.LoginReqDto;
 import com.teamproject.mvc20221004teamproject.dto.JoinDto;
 import com.teamproject.mvc20221004teamproject.dto.validation.ValidationSequence;
+import com.teamproject.mvc20221004teamproject.service.AccountService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -18,7 +21,10 @@ import java.util.Map;
 
 @RequestMapping("/api/account")
 @RestController
+@RequiredArgsConstructor
 public class AccountApi {
+
+    private final AccountService accountService;
 
     @PostMapping("/login")
     public ResponseEntity<?>login(@Valid @RequestBody LoginReqDto loginReqDto, BindingResult bindingResult) {
@@ -38,8 +44,10 @@ public class AccountApi {
         return ResponseEntity.ok().body(null);
     }
 
+    @LogAspect
     @PostMapping("/join")
-    public ResponseEntity<?>join(@Validated(ValidationSequence.class) @RequestBody JoinDto joinDto, BindingResult bindingResult) {
+    public ResponseEntity<?>join(@Validated(ValidationSequence.class) @RequestBody JoinDto joinDto, BindingResult bindingResult) throws Exception {
+        accountService.join(joinDto);
         return ResponseEntity.badRequest().body(new CMRespDto<>("회원가입 성공", joinDto));
     }
 
