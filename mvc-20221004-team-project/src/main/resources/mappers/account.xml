@@ -29,7 +29,7 @@
     </resultMap>
 
     <!--  parameterType은 repository의 findUserByEmail의 파라메터 타입을 가져오며, resultType는 리턴값을 가져오지만 resultMap을 이용해 위 id를 가져온다. -->
-    <select id="findUserByEmail" parameterType="String" resultMap="user">
+    <select id="findUserByUserName" parameterType="String" resultMap="user">
         select
             um.id,
             um.username,
@@ -47,8 +47,8 @@
             um.update_date
         from
             user_mst um
-            left outer join role on(rm.id = um.role_id)
+            left outer join role_mst rm on(rm.id = um.role_id)
         where
-            um.email = #{email}
+            um.username = #{username}
     </select>
 </mapper>

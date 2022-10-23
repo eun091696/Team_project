@@ -19,10 +19,10 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public void join(JoinDto joinDto) throws Exception {
-        User user = accountRepository.findUserByEmail(joinDto.getUserName());
+        User user = accountRepository.findUserByUserName(joinDto.getUserName());
         if(user != null) {
             Map<String, String> errorMap = new HashMap<String, String>();
-            errorMap.put("email", "이미 사용중인 아이디입니다.");
+            errorMap.put("userName", "이미 사용중인 아이디입니다.");
 
             throw new CustomValidationException("Duplicate email", errorMap);
         }

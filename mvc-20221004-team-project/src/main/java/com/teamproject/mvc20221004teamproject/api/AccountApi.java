@@ -14,6 +14,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class AccountApi {
     @PostMapping("/join")
     public ResponseEntity<?>join(@Validated(ValidationSequence.class) @RequestBody JoinDto joinDto, BindingResult bindingResult) throws Exception {
         accountService.join(joinDto);
-        return ResponseEntity.badRequest().body(new CMRespDto<>("회원가입 성공", joinDto));
+        return ResponseEntity.created(null).body(new CMRespDto<>("회원가입 성공", joinDto));
     }
 
 }
