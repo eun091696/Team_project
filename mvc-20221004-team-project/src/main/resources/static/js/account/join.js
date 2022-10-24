@@ -21,9 +21,11 @@ btnComfirm.onclick = () => {
         contentType: "application/json",
         data: JSON.stringify(user),
         dataType: "json",
-        success: (response) => {
+        success: (response, textStatus, request) => {
             alert("회원가입 요청 성공");
             console.log(response);
+            const successURI = request.getResponseHeader("Location");
+            location.replace(successURI + "?username=" + response.data)
         },
         error: (error) => {
             alert("회원가입 요청 실패");

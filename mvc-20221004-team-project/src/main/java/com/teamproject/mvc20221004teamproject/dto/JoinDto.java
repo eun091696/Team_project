@@ -1,7 +1,9 @@
 package com.teamproject.mvc20221004teamproject.dto;
 
+import com.teamproject.mvc20221004teamproject.domain.User;
 import com.teamproject.mvc20221004teamproject.dto.validation.ValidationGroups;
 import lombok.Data;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -43,4 +45,17 @@ public class JoinDto {
     @NotBlank(message = "주소는 비워둘 수 없습니다.", groups = ValidationGroups.NotBlankGroup.class)
     private String address;
 
+    public User toEntity() {
+        return User.builder()
+                .username(userName)
+                .password(new BCryptPasswordEncoder().encode(password))
+                .passwordchk(new BCryptPasswordEncoder().encode(passwordChk))
+                .name(name)
+                .email(email)
+                .phonenum(phoneNum)
+                .number(number)
+                .address(address)
+                .role_id(1)
+                .build();
+    }
 }

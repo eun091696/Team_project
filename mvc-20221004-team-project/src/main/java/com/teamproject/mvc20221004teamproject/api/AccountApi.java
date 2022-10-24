@@ -8,6 +8,8 @@ import com.teamproject.mvc20221004teamproject.dto.validation.ValidationSequence;
 import com.teamproject.mvc20221004teamproject.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
@@ -27,29 +29,20 @@ public class AccountApi {
 
     private final AccountService accountService;
 
-    @PostMapping("/login")
-    public ResponseEntity<?>login(@Valid @RequestBody LoginReqDto loginReqDto, BindingResult bindingResult) {
-
-        if(bindingResult.hasErrors()) {
-            Map<String, String> errorMap = new HashMap<String, String>();
-
-            List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-            for(FieldError fieldError : fieldErrors) {
-                System.out.println("필드명: " + fieldError.getField());
-                System.out.println("에러 메세지: " + fieldError.getDefaultMessage());
-                errorMap.put(fieldError.getField(), fieldError.getDefaultMessage());
-            }
-            return ResponseEntity.badRequest().body(errorMap);
-        }
-
-        return ResponseEntity.ok().body(null);
+    public String login(Model model,
+                        @RequestParam @Nullable String username,
+                        @RequestParam @Nullable String error) {
+        model.addAttribute("username", username == null ? "" : username);
+        model.addAttribute("error", error == null ? "" : error);
+        return "account/login";
     }
 
     @LogAspect
     @PostMapping("/join")
     public ResponseEntity<?>join(@Validated(ValidationSequence.class) @RequestBody JoinDto joinDto, BindingResult bindingResult) throws Exception {
+        accountService.duplicataEmail(joinDto);
         accountService.join(joinDto);
-        return ResponseEntity.created(null).body(new CMRespDto<>("회원가입 성공", joinDto));
+        return ResponseEntity.created(URI.create("/account/login")).body(new CMRespDto<>("회원가입 성공", joinDto.getUserName()));
     }
 
 }

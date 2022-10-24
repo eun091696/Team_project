@@ -1,6 +1,7 @@
 package com.teamproject.mvc20221004teamproject.api.advice;
 
 import com.teamproject.mvc20221004teamproject.dto.CMRespDto;
+import com.teamproject.mvc20221004teamproject.exception.CustomInternalServerException;
 import com.teamproject.mvc20221004teamproject.exception.CustomValidationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,4 +17,12 @@ public class RestControllerExceptionHandler {
 
         return ResponseEntity.badRequest().body(new CMRespDto<>(e.getMessage(), e.getErrorMap()));
     }
+
+    @ExceptionHandler(CustomInternalServerException.class)
+    public ResponseEntity<?> internalServerErrorException(CustomInternalServerException e) {
+
+        return ResponseEntity.internalServerError().body(new CMRespDto<>(e.getMessage(), null));
+    }
+
+
 }

@@ -51,4 +51,24 @@
         where
             um.username = #{username}
     </select>
+
+    <insert id="saveUser" parameterType="com.teamproject.mvc20221004teamproject.domain.User">
+        insert into
+            user_mst
+        values(
+            0,
+            #{username},
+            #{password},
+            #{passwordchk},
+            #{name},
+            #{email},
+            #{phonenum},
+            #{number},
+            #{address},
+            #{provider},
+            #{role_id},
+            now(),
+            now()
+        )
+    </insert>
 </mapper>
